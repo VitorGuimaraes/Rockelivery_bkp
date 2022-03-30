@@ -13,7 +13,8 @@
           'Elixir.RockeliveryWeb.ErrorView','Elixir.RockeliveryWeb.Gettext',
           'Elixir.RockeliveryWeb.Router',
           'Elixir.RockeliveryWeb.Router.Helpers',
-          'Elixir.RockeliveryWeb.Telemetry']},
+          'Elixir.RockeliveryWeb.Telemetry',
+          'Elixir.RockeliveryWeb.WelcomeController']},
      {registered,[]},
      {vsn,"0.1.0"},
      {mod,{'Elixir.Rockelivery.Application',[]}}]}.

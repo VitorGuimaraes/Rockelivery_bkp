@@ -7,6 +7,9 @@ defmodule RockeliveryWeb.Router do
 
   scope "/api", RockeliveryWeb do
     pipe_through :api
+
+    # Controller and action (index)
+    get "/", WelcomeController, :index
   end
 
   # Enables LiveDashboard only for development
