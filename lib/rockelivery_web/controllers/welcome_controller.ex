@@ -4,6 +4,7 @@ defmodule RockeliveryWeb.WelcomeController do
   use RockeliveryWeb, :controller
 
   # Actions receive a connection and params
+  # params are received by url or body
   def index(conn, params) do
     conn
     |> IO.inspect()
