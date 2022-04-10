@@ -14,7 +14,7 @@ defmodule Rockelivery.User do
     field :cep, :string
     field :cpf, :string
     field :email, :string
-    field :password, :string, virtual: true # receive password but save in password_hash
+    field :password, :string, virtual: true
     field :password_hash, :string
     field :name, :string
 
@@ -37,9 +37,8 @@ defmodule Rockelivery.User do
     |> put_password_hash()
   end
 
-  defp put_password_hash(%Changeset{valid?: true, changes: %{password: password}} = changeset) do
+  defp put_password_hash(%Changeset{valid?: true, changes: %{password: password}} = changeset)
     change(changeset, Pbkdf2.add_hash(password))
-  end
 
   defp put_password_hash(changeset), do: changeset
 
