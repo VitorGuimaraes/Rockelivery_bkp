@@ -25,7 +25,7 @@ To install PostgreSQL (Linux):
 
 To install inotify-tools:
   It enables Phoenix's Live Reloading feature 
-  `apt install inotify-tools`
+  `sudo apt install inotify-tools`
 
 ## Running the project
 To start your Phoenix server:
