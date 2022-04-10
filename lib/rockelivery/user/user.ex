@@ -8,6 +8,9 @@ defmodule Rockelivery.User do
 
   @required_params [:age, :address, :cep, :cpf, :email, :password, :name]
 
+  # Encode struct to json
+  @derive {Jason.Encoder, only: [:id, :age, :cpf, :address, :email]}
+
   schema "users" do
     field :age, :integer
     field :address, :string
@@ -37,8 +40,9 @@ defmodule Rockelivery.User do
     |> put_password_hash()
   end
 
-  defp put_password_hash(%Changeset{valid?: true, changes: %{password: password}} = changeset)
+  defp put_password_hash(%Changeset{valid?: true, changes: %{password: password}} = changeset) do
     change(changeset, Pbkdf2.add_hash(password))
+  end
 
   defp put_password_hash(changeset), do: changeset
 
